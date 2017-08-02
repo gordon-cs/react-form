@@ -11,12 +11,11 @@ const FormField = ({ field, path, setFieldValue, subContent, ...rest }) => {
     setFieldValue(path, _.get(e, ['target', 'value'], null));
   };
 
-  console.log(field);
   return (
-    <div className="FormField">
+    <div className="FormField col-xs-12">
       <h5 className="FormField-header">{field.get('name', null)}</h5>
       <div className="FormField-content">
-        {<Content onChange={onChange} { ...field.toJS() } { ...rest } />}
+        {<Content onChange={onChange} {...field.toJS()} {...rest} />}
       </div>
     </div>
   );
@@ -34,6 +33,6 @@ FormField.defaultProps = {
   path: Immutable.List(),
   subContent: null,
   setFieldValue: _.noop
-}
+};
 
 export default FormField;

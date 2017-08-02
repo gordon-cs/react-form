@@ -11,7 +11,10 @@ class Form extends React.Component {
   }
 
   render() {
-    const { form, path, submit } = this.props;
+    const {
+      form,
+      submit
+    } = this.props;
 
     const groups = form.get('groups', Immutable.List())
       .map((group, key) => (
@@ -19,14 +22,16 @@ class Form extends React.Component {
           group={group}
           key={key}
           path={Immutable.fromJS(['groups', key])}
-          { ...this.props }
+          {...this.props}
         />
       ));
 
     return (
       <div className="Form">
         <form onSubmit={submit}>
-          {groups}
+          <div className="Form-content row">
+            {groups}
+          </div>
           <button type="submit">Submit</button>
         </form>
       </div>

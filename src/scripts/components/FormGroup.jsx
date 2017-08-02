@@ -11,21 +11,21 @@ const FormGroup = ({ group, path, ...rest }) => {
         field={field}
         key={key}
         path={path.concat(['fields', key])}
-        { ...rest }
+        {...rest}
       />
     ));
 
   return (
-    <div className="FormGroup">
+    <div className="FormGroup col-xs-12">
       <h3 className="FormGroup-header">{group.get('name', null)}</h3>
-      <div className="FormGroup-group">
+      <div className="FormGroup-group row">
         {fields}
       </div>
     </div>
   );
 };
 
-FormGroup.PropTypes = {
+FormGroup.propTypes = {
   group: PropTypes.instanceOf(Immutable.Map),
   path: PropTypes.instanceOf(Immutable.List)
 };

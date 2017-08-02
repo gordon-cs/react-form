@@ -4,13 +4,20 @@ import _ from 'lodash';
 import { isEnterKey } from '../util/keyPressEvents';
 
 const FormInput = ({ name, onChange, submit, type }) => {
+  const onKeyDown = (e) => {
+    if (isEnterKey(e)) {
+      return submit(e);
+    }
+    return _.noop();
+  };
+
   return (
     <input
       className="FormInput"
       name={name}
       type={type}
       onChange={onChange}
-      onKeyDown={(e) => isEnterKey(e) ? submit(e) : _.noop()}
+      onKeyDown={onKeyDown}
     />
   );
 };
