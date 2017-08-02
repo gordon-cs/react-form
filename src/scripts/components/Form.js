@@ -10,7 +10,7 @@ class Form extends React.Component {
     this.props.fetch();
   }
 
-  render () {
+  render() {
     const { form, path, submit } = this.props;
 
     const groups = form.get('groups', Immutable.List())
