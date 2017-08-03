@@ -4,6 +4,7 @@ import Immutable from 'immutable';
 import _ from 'lodash';
 
 import FormGroup from './FormGroup';
+import FormViewer from  './FormViewer';
 
 class Form extends React.Component {
   componentDidMount() {
@@ -34,6 +35,7 @@ class Form extends React.Component {
           </div>
           <button type="submit">Submit</button>
         </form>
+        <FormViewer form={form} />
       </div>
     );
   }
