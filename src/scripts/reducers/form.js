@@ -7,18 +7,21 @@ import { formActionTypes } from '../actionTypes';
 const fetch = () => Immutable.fromJS({
   groups: [
     {
-      name: 'group1',
+      name: 'Parts Order Form',
       fields: [
         {
           name: 'firstName',
+          label: 'First Name',
           value: null
         },
         {
           name: 'lastName',
+          label: 'Last Name',
           value: null
         },
         {
           name: 'age',
+          label: 'Age',
           value: null,
           type: 'number'
         }
@@ -42,6 +45,7 @@ const formReducer = (state = Immutable.Map(), action) => {
       return state.setIn(action.path.push('value'), parseInput(action.value));
     case formActionTypes.submit:
       // TODO: submit method
+      console.log(state);
       return state;
     default:
       return state;

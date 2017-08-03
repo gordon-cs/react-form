@@ -1,5 +1,6 @@
 html, body {
   font-family: sans-serif;
+  position: relative;
 }
 
 * {
@@ -7,12 +8,127 @@ html, body {
   margin: 0;
 }
 
-.Form { /* */ }
+.Form {
+  border: solid 1px red;
+  padding: 8px;
+  margin-left: 16px;
+  margin-top: 16px;
+}
 
-.FormGroup { /* */ }
+.Form-form {
+  outline: solid 1px blue;
+}
 
-.FormGroup-header { /* */ }
+.Form-submit-button {
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  max-width: 140px;
+}
+
+.FormGroup {
+  outline: solid 1px black;
+}
+
+.FormGroup-header {
+  color: #313131;
+  font-size: 32px;
+  font-weight: 300;
+  padding: 10px 0;
+}
 
 .FormField { /* */ }
 
 .FormField-header { /* */ }
+
+.FormInput {
+  position: relative;
+  margin-bottom: 45px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.FormInput-input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: calc(100% - 15px); /* adjust for padding */
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+.FormInput-input::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+  -moz-appearance:textfield !important;
+}
+
+.FormInput-input:focus {
+  outline: none;
+}
+
+.FormInput-input:focus ~ .FormInput-label, .FormInput-input:valid ~ .FormInput-label {
+  top: -20px;
+  font-size: 14px;
+  /* color: #0082F3; */
+}
+
+.FormInput-label {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  color: #2097FF;
+};
+
+.FormInput-bottom-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.FormInput-bottom-bar:before, .FormInput-bottom-bar:after {
+  content: '';
+  height: 1px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #2097FF;
+  transition: 0.2s ease all;
+}
+
+.FormInput-bottom-bar:before {
+  left: 50%;
+}
+
+.FormInput-bottom-bar:after {
+  right: 50%;
+}
+
+.FormInput-input:focus ~ .FormInput-bottom-bar:before, .FormInput-input:focus ~ .FormInput-bottom-bar:after {
+  width: 50%;
+}
+
+.FormInput-input:focus ~ .FormInput-label, .FormInput-input:valid ~ .FormInput-label {
+  font-size: 14px;
+  color: #85C6FF;
+}
+
+.FormViewer {
+  background-color: #FFFFFF;
+  border: solid 1px #AFAFAF;
+  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  padding: 16px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: auto;
+  min-width: 300px;
+  max-width: 720px;
+  height: auto;
+  max-height: 540px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+}

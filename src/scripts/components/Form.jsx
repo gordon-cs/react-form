@@ -29,11 +29,11 @@ class Form extends React.Component {
 
     return (
       <div className="Form">
-        <form onSubmit={submit}>
+        <form className="Form-form" onSubmit={submit}>
           <div className="Form-content row">
             {groups}
           </div>
-          <button type="submit">Submit</button>
+          <button className="Form-submit-button" type="submit">Submit</button>
         </form>
         <FormViewer form={form} />
       </div>
