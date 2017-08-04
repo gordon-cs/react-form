@@ -1,5 +1,6 @@
 html, body {
   font-family: sans-serif;
+  padding: 12px;
 }
 
 * {
@@ -8,12 +9,12 @@ html, body {
 }
 
 .Form {
-  margin: 18px;
   max-width: 600px;
+  margin: 12px;
 }
 
 .FormViewer-wrapper {
-  margin: 18px;
+  margin: 12px;
   min-width: 300px;
   max-height: 450px;
   overflow: scroll;
