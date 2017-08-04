@@ -7,12 +7,66 @@ html, body {
   margin: 0;
 }
 
-.Form { /* */ }
+.Form {
+  margin: 18px;
+  max-width: 600px;
+}
 
-.FormGroup { /* */ }
+.FormViewer-wrapper {
+  margin: 18px;
+  min-width: 300px;
+  max-height: 450px;
+  overflow: scroll;
+}
 
-.FormGroup-header { /* */ }
+.FormViewer {
+  padding: 18px;
+}
+
+.Form-header {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.Form-form {
+  padding: 18px;
+  margin: auto;
+}
+
+.Form-submit-button {
+  /* max-width: 125px; */
+  margin: 30px 0;
+}
+
+.FormGroup {
+  padding: 24px;
+}
+
+.FormGroup-header {
+  border-bottom: solid 1px #00aedf;
+  color: #00aedf;
+  font-size: 22px;
+  padding-bottom: 6px;
+}
 
 .FormField { /* */ }
 
-.FormField-header { /* */ }
+.FormInput { /* */ }
+
+.FormInput-DROP_DOWN_MENU {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: solid 1px #E0E0E0;
+}
+
+.FormInput-DROP_DOWN_MENU > .FormInput-input {
+  /* border: solid 1px red; */
+  top: 6px;
+}
+
+.FormInput-DROP_DOWN_MENU-label {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  align-self: flex-end;
+  padding-bottom: 6px;
+}

@@ -1,11 +1,12 @@
 import _ from 'lodash';
 import { connect } from 'react-redux';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import { formActions } from '../actions';
-
 import Form from './Form';
-
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.css';
 import '../../styles/index.css';
+
+injectTapEventPlugin();
 
 const mapStateToProps = (state) => ({
   form: state.form

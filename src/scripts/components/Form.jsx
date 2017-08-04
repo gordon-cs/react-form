@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import _ from 'lodash';
-
 import FormGroup from './FormGroup';
 import FormViewer from  './FormViewer';
+import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class Form extends React.Component {
   componentDidMount() {
@@ -28,18 +29,30 @@ class Form extends React.Component {
       ));
 
     return (
-      <div className="Form">
-        <form onSubmit={submit}>
-          <div className="Form-content row">
-            {groups}
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-        <FormViewer form={form} />
+      <div className="row">
+        <Paper className="Form col-sm-6" zDepth={1}>
+          <form className="Form-form" onSubmit={submit}>
+            <h3 className="Form-header">{form.get('name', null)}</h3>
+            <div className="Form-content row">
+              {groups}
+            </div>
+            <div className="Form-submit-button">
+              <RaisedButton
+                fullWidth
+                label="Submit"
+                type="submit"
+                primary
+              />
+            </div>
+          </form>
+        </Paper>
+        <Paper className="FormViewer-wrapper" zDepth={1}>
+          <FormViewer form={form} />
+        </Paper>
       </div>
     );
   }
-};
+}
 
 Form.propTypes = {
   fetch: PropTypes.func,
